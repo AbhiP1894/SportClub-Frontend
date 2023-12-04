@@ -7,7 +7,7 @@ pipeline {
     tools {
         nodejs 'NodeJS'
         jdk 'JDK11'
-        // git 'Default'
+        git 'Default'
         maven 'Maven'
         // snyk 'Snyk'
         // dockerTool 'Docker'
