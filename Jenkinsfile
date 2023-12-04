@@ -1,7 +1,9 @@
 pipeline {
-    agent {
-        label 'linux'
-    }
+    // agent {
+    //     label 'linux'
+    // }
+    agen any
+    
     tools {
         nodejs 'NodeJS'
         jdk 'JDK11'
