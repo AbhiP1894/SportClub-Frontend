@@ -9,8 +9,6 @@ pipeline {
         // snyk 'Snyk'
         // dockerTool 'Docker'
     }
-
-
     // environment {
     //     // Define environment variables if needed
     //     NODEJS_HOME = tool 'NodeJS'
