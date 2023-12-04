@@ -18,7 +18,7 @@ pipeline {
     //     PATH="${NODEJS_HOME}/bin:${PATH}"
     // }
     environment {
-        PATH="${tool 'SonarQube '}/bin:${PATH}"
+        PATH="${tool 'SonarScanner '}/bin:${PATH}"
     }
 
     stages {
@@ -66,7 +66,7 @@ pipeline {
             steps {
                 script {
                     // SonarQube Scanner stage
-                    withSonarQubeEnv('SonarQube') {
+                    withSonarQubeEnv('SonarScanner') {
                         sh "sonar-scanner \
                             -Dsonar.projectKey=demo-app \
                             -Dsonar.sources=src \
