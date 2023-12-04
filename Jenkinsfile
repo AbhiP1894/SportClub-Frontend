@@ -16,14 +16,12 @@ pipeline {
         NODEJS_HOME = tool 'NodeJS'
         PATH="${NODEJS_HOME}/bin:${PATH}"
     }
-
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
-
         stage('Install Dependencies') {
             steps {
                 script {
@@ -32,7 +30,6 @@ pipeline {
                 }
             }
         }
-
         stage('Build') {
             steps {
                 script {
@@ -41,28 +38,20 @@ pipeline {
                 }
             }
         }
-
         stage('Test') {
             steps {
                 script {
-                    // Run tests if applicable
+                    // Run tests if applicabl
                     // Add your test commands here
                     sh 'npm run test'
                 }
             }
         }
-
         stage('Deploy') {
             steps {
                 // Add deployment steps here
                 // For example, deploying to a web server or cloud platform
             }
-        }
-    }
-
-    post {
-        always {
-            // Clean up steps, if needed
         }
     }
 }
