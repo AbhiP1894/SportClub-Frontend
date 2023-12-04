@@ -17,6 +17,10 @@ pipeline {
     //     NODEJS_HOME = tool 'NodeJS'
     //     PATH="${NODEJS_HOME}/bin:${PATH}"
     // }
+    environment {
+        PATH="${tool 'SonarQube '}/bin:${PATH}"
+    }
+
     stages {
         // stage('Checkout') {
         //     steps {
