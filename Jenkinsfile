@@ -53,7 +53,7 @@ pipeline {
                 script {
                     // Execute SonarQube analysis
                     // Replace the placeholders with your SonarQube server details
-                    sh 'npm run sonar'
+                    bat 'npm run sonar'
                 }
             }
         }
