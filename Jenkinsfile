@@ -49,11 +49,23 @@ pipeline {
         //     }
         // }
         stage('SonarQube Analysis') {
+            // steps {
+            //     script {
+            //         // Execute SonarQube analysis
+            //         // Replace the placeholders with your SonarQube server details
+            //         bat 'npm run sonar'
+            //     }
+            // }
             steps {
                 script {
-                    // Execute SonarQube analysis
-                    // Replace the placeholders with your SonarQube server details
-                    bat 'npm run sonar'
+                    // SonarQube Scanner stage
+                    withSonarQubeEnv(credentialsId: 'sonar-token-1', installationName: 'SonarQube') {
+                        sh "sonar-scanner \
+                            -Dsonar.projectKey=demo-app \
+                            -Dsonar.sources=src \
+                            -Dsonar.host.url=http://172.27.59.157:9000 \
+                            -Dsonar.login=sonar-token-1"
+                    }
                 }
             }
         }
