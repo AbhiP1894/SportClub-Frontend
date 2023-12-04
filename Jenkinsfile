@@ -60,6 +60,9 @@ pipeline {
             //         bat 'npm run sonar'
             //     }credentialsId: 'sonar-token-1', installationName:
             // }
+            when {
+                branch 'snyk-demo'
+            }
             steps {
                 script {
                     // SonarQube Scanner stage
