@@ -4,18 +4,18 @@ pipeline {
     tools {
         nodejs 'NodeJS'
         jdk 'JDK11'
-        git 'Default'
+        // git 'Default'
         maven 'Maven'
-        snyk 'Snyk'
-        dockerTool 'Docker'
+        // snyk 'Snyk'
+        // dockerTool 'Docker'
     }
 
 
-    environment {
-        // Define environment variables if needed
-        NODEJS_HOME = tool 'NodeJS'
-        PATH="${NODEJS_HOME}/bin:${PATH}"
-    }
+    // environment {
+    //     // Define environment variables if needed
+    //     NODEJS_HOME = tool 'NodeJS'
+    //     PATH="${NODEJS_HOME}/bin:${PATH}"
+    // }
     stages {
         stage('Checkout') {
             steps {
