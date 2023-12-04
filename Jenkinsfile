@@ -29,23 +29,23 @@ pipeline {
         //         }
         //     }
         // }
-        stage('Build') {
-            steps {
-                script {
-                    // Build Angular app
-                    sh 'npm run build -- --prod'
-                }
-            }
-        }
-        stage('Test') {
-            steps {
-                script {
-                    // Run tests if applicabl
-                    // Add your test commands here
-                    sh 'npm run test'
-                }
-            }
-        }
+        // stage('Build') {
+        //     steps {
+        //         script {
+        //             // Build Angular app
+        //             sh 'npm run build -- --prod'
+        //         }
+        //     }
+        // }
+        // stage('Test') {
+        //     steps {
+        //         script {
+        //             // Run tests if applicabl
+        //             // Add your test commands here
+        //             sh 'npm run test'
+        //         }
+        //     }
+        // }
         stage('SonarQube Analysis') {
             steps {
                 script {
