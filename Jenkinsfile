@@ -51,11 +51,7 @@ pipeline {
                 script {
                     // Execute SonarQube analysis
                     // Replace the placeholders with your SonarQube server details
-                    sh "sonar-scanner \
-                        -Dsonar.projectKey=angular-1 \
-                        -Dsonar.sources=src \
-                        -Dsonar.host.url=172.27.59.157:9000
-                        -Dsonar.login=547eb616495ae5d6f0424a783bd18de965a93b15"
+                    sh 'npm run sonar'
                 }
             }
         }
