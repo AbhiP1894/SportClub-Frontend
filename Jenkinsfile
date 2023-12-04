@@ -47,11 +47,11 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
-            steps {
-                // Add deployment steps here
-                // For example, deploying to a web server or cloud platform
-            }
-        }
+        // stage('Deploy') {
+        //     steps {
+        //         // Add deployment steps here
+        //         // For example, deploying to a web server or cloud platform
+        //     }
+        // }
     }
 }
