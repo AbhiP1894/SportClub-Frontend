@@ -1,5 +1,15 @@
 pipeline {
     agent any
+    
+    tools {
+        nodejs 'NodeJS'
+        jdk 'JDK11'
+        git 'Default'
+        maven 'Maven'
+        snyk 'Snyk'
+        dockerTool 'Docker'
+    }
+
 
     environment {
         // Define environment variables if needed
