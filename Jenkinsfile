@@ -54,12 +54,12 @@ pipeline {
             //         // Execute SonarQube analysis
             //         // Replace the placeholders with your SonarQube server details
             //         bat 'npm run sonar'
-            //     }
+            //     }credentialsId: 'sonar-token-1', installationName:
             // }
             steps {
                 script {
                     // SonarQube Scanner stage
-                    withSonarQubeEnv(credentialsId: 'sonar-token-1', installationName: 'SonarQube') {
+                    withSonarQubeEnv('SonarQube') {
                         sh "sonar-scanner \
                             -Dsonar.projectKey=demo-app \
                             -Dsonar.sources=src \
