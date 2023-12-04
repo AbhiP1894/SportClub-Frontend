@@ -2,7 +2,7 @@ pipeline {
     // agent {
     //     label 'linux'
     // }
-    agen any
+    agent any
     
     tools {
         nodejs 'NodeJS'
