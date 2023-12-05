@@ -21,9 +21,11 @@ pipeline {
     //     NODEJS_HOME = tool 'NodeJS'
     //     PATH="${NODEJS_HOME}/bin:${PATH}"
     // }
-    // environment {
-    //     PATH="${tool 'SonarScanner '}/bin:${PATH}"
-    // }
+    environment {
+        // PATH="${tool 'SonarScanner '}/bin:${PATH}"
+        SONAR_PROJECT_KEY = 'demo-app'
+        SONAR_HOST_URL = 'http://172.27.59.157:9000'
+    }
 
     stages {
         // stage('Checkout') {
@@ -69,14 +71,22 @@ pipeline {
             }
             steps {
                 script {
-                    // SonarQube Scanner stage
-                    withSonarQubeEnv('SonarScanner') {
+
+                     withCredentials([string(credentialsId: 'sonar-token-1', variable: 'SONAR_TOKEN')]) {
+                        // Run SonarQube scan
                         sh "sonar-scanner \
-                            -Dsonar.projectKey=demo-app \
-                            -Dsonar.sources=src \
-                            -Dsonar.host.url=http://172.27.59.157:9000 \
-                            -Dsonar.login=sonar-token-1"
-                    }
+                            -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
+                            -Dsonar.host.url=${SONAR_HOST_URL} \
+                            -Dsonar.login=${SONAR_TOKEN}"
+                         
+                    // // SonarQube Scanner stage
+                    // withSonarQubeEnv('SonarScanner') {
+                    //     sh "sonar-scanner \
+                    //         -Dsonar.projectKey=demo-app \
+                    //         -Dsonar.sources=src \
+                    //         -Dsonar.host.url=http://172.27.59.157:9000 \
+                    //         -Dsonar.login=sonar-token-1"
+                    // }
                 }
             }
         }
