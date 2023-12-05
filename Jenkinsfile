@@ -71,13 +71,13 @@ pipeline {
             }
             steps {
                 script {
-
-                     withCredentials([string(credentialsId: 'sonar-token-1', variable: 'SONAR_TOKEN')]) {
+                    withCredentials([string(credentialsId: 'sonar-token-1', variable: 'SONAR_TOKEN')]) {
                         // Run SonarQube scan
                         sh "sonar-scanner \
-                            -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
-                            -Dsonar.host.url=${SONAR_HOST_URL} \
-                            -Dsonar.login=${SONAR_TOKEN}"
+                        -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
+                        -Dsonar.host.url=${SONAR_HOST_URL} \
+                        -Dsonar.login=${SONAR_TOKEN}"
+                    }
                          
                     // // SonarQube Scanner stage
                     // withSonarQubeEnv('SonarScanner') {
