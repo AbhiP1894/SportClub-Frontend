@@ -9,7 +9,7 @@ pipeline {
         jdk 'JDK11'
         git 'Default'
         maven 'Maven'
-        SonarScanner 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+        SonarScanner 'SonarScanner' type: 'hudson.plugins.sonar.SonarRunnerInstallation'
         // snyk 'Snyk'
         // dockerTool 'Docker'
     }
