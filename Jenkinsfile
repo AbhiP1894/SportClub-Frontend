@@ -9,12 +9,13 @@ pipeline {
         jdk 'JDK11'
         git 'Default'
         maven 'Maven'
+        SonarScanner 'SonarScanner'
         //SonarScanner 'SonarScanner' type: 'hudson.plugins.sonar.SonarRunnerInstallation'
         // snyk 'Snyk'
         // dockerTool 'Docker'
     }
 
-    tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+   
     // environment {
     //     // Define environment variables if needed
     //     NODEJS_HOME = tool 'NodeJS'
