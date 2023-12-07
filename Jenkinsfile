@@ -22,7 +22,7 @@ pipeline {
     //     PATH="${NODEJS_HOME}/bin:${PATH}"
     // }
     environment {
-        PATH="${tool 'SonarScanner '}/bin:${PATH}"
+        //PATH="${tool 'SonarScanner '}/bin:${PATH}"
         SONAR_PROJECT_KEY = 'demo-app'
         SONAR_HOST_URL = 'http://172.27.59.157:9000'
     }
