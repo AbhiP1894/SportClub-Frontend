@@ -73,9 +73,9 @@ pipeline {
                 script {
                     withCredentials([string(credentialsId: 'sonar-token-1', variable: 'SONAR_TOKEN')]) {
                         // Run SonarQube scan
-                        bat "sonar-scanner /
-                        -Dsonar.projectKey=${SONAR_PROJECT_KEY} /
-                        -Dsonar.host.url=${SONAR_HOST_URL} /
+                        bat "sonar-scanner \
+                        -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
+                        -Dsonar.host.url=${SONAR_HOST_URL} \
                         -Dsonar.login=${SONAR_TOKEN}"
                     }
                          
